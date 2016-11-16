@@ -7,13 +7,19 @@ http://book.impress.co.jp/books/1111101167
 ### Build container
 
 ```
-$ docker build -t testdb .
+$ docker build -t postgresqldb .
 ```
 
 ### Run container
 
 ```
-$ docker run -d --name ssql testdb
+$ docker run --name ssql -itd --restart always --publish 5432:5432 postgresqldb
+```
+
+### Login
+
+```
+$ docker exec -it ssql bash
 ```
 
 ### Execute sql command(example)
