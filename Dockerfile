@@ -1,8 +1,7 @@
 FROM postgres:9.6
 
-
 RUN apt-get update && \
-    apt-get install -y curl unzip
+    apt-get install -y curl unzip less
 
 RUN mkdir /temp/ && \
     cd /temp/ && \
