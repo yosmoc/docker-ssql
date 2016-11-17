@@ -11,3 +11,5 @@ RUN mkdir /temp/ && \
     cd code-ssql/ddl/ && \
     for file in *; do mv -i "${file}" "${file}.sql"; done && \
     cp * /docker-entrypoint-initdb.d/
+
+COPY docker-entrypoint.sh /
