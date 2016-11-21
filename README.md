@@ -10,7 +10,7 @@ http://book.impress.co.jp/books/1111101167
 $ docker build -t postgresqldb .
 ```
 
-### Run container
+### Create and run container
 
 ```
 $ docker run --name ssql -itd --restart always --publish 5432:5432 postgresqldb
@@ -18,6 +18,18 @@ $ docker run --name ssql -itd --restart always --publish 5432:5432 postgresqldb
 
 Create the databases and tables.
 NOTE: it takes several minutes to execute the database initialize script. During the time, you cannot connect the database.
+
+### start container
+
+```
+$ docker start ssql
+```
+
+### stop container
+
+```
+$ docker stop ssql
+```
 
 ### Execute sql command(example)
 
