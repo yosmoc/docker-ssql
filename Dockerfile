@@ -7,8 +7,6 @@ RUN mkdir /temp/ && \
     cd /temp/ && \
     curl -LOk https://flairlink.jp/download/code-ssql.zip && \
     unzip code-ssql.zip && \
-    cd code-ssql/ddl/ && \
-    for file in *; do mv -i "${file}" "${file}.sql"; done && \
-    cp * /docker-entrypoint-initdb.d/
+    cp -r code-ssql/ddl/ /docker-entrypoint-initdb.d/
 
-COPY docker-entrypoint.sh /
+COPY create_database.sh /docker-entrypoint-initdb.d/
